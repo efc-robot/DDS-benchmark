@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorld.cxx
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorld.cxx
 HelloWorld.h
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorld.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorld.h
 fastcdr/Cdr.h
 -
 fastcdr/exceptions/BadParamException.h
@@ -16,7 +16,7 @@ fastcdr/exceptions/BadParamException.h
 utility
 -
 
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorld.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorld.h
 stdint.h
 -
 array
@@ -30,25 +30,25 @@ map
 bitset
 -
 
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorldPubSubTypes.cxx
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorldPubSubTypes.cxx
 fastcdr/FastBuffer.h
 -
 fastcdr/Cdr.h
 -
 HelloWorldPubSubTypes.h
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorldPubSubTypes.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorldPubSubTypes.h
 
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorldPubSubTypes.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorldPubSubTypes.h
 fastdds/dds/topic/TopicDataType.hpp
 -
 fastrtps/utils/md5.h
 -
 HelloWorld.h
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorld.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorld.h
 
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorldSubscriber.cpp
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorldSubscriber.cpp
 HelloWorldPubSubTypes.h
-/home/shenzy/Documents/DDSHelloWorld_ws/src/HelloWorldPubSubTypes.h
+/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/src/HelloWorldPubSubTypes.h
 fastdds/dds/domain/DomainParticipantFactory.hpp
 -
 fastdds/dds/domain/DomainParticipant.hpp
@@ -64,6 +64,8 @@ fastdds/dds/subscriber/DataReaderListener.hpp
 fastdds/dds/subscriber/qos/DataReaderQos.hpp
 -
 fastdds/dds/subscriber/SampleInfo.hpp
+-
+fastdds/dds/log/StdoutConsumer.hpp
 -
 
 /usr/local/include/fastcdr/Cdr.h
@@ -374,6 +376,18 @@ sstream
 atomic
 -
 regex
+-
+
+/usr/local/include/fastdds/dds/log/OStreamConsumer.hpp
+iostream
+-
+fastdds/dds/log/Log.hpp
+-
+
+/usr/local/include/fastdds/dds/log/StdoutConsumer.hpp
+fastdds/dds/log/Log.hpp
+-
+fastdds/dds/log/OStreamConsumer.hpp
 -
 
 /usr/local/include/fastdds/dds/subscriber/DataReader.hpp

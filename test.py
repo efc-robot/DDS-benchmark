@@ -4,7 +4,7 @@ import subprocess
 import time
 
 parser = argparse.ArgumentParser(description="DDS benchmark")
-parser.add_argument('--num', type=int, default=100, help="number of experiments, default:100")
+parser.add_argument('--num', type=int, default=1, help="number of experiments, default:100")
 parser.add_argument('--dds', required=True, choices=['fastdds', 'opensplice', 'connext', 'opendds'], nargs='+', 
     help="choose one or more DDS for experiments(choices:fastdds, opensplice, connext, opendds)")
 group = parser.add_mutually_exclusive_group(required=True)
@@ -27,14 +27,14 @@ def test_sub(dds, index):
     subscriber = subprocess.Popen(os.path.join(".", exe_dir), stdout=outputfile)
 
     # second, run network script
-    subprocess.run(['/bin/bash', "./script/network.sh"], stdout=subprocess.PIPE)
-
+    network = subprocess.Popen(['/bin/bash', "./script/network.sh", "fastdds", "{:d}".format(index)], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+    network.wait()
     # wait for publisher
     time.sleep(20)
 
     # kill subprocess
     if subprocess.Popen.poll(subscriber) == None:
-        subscriber.terminate()
+        subprocess.Popen.terminate(subscriber)
     outputfile.close()
 
 def test_pub(dds, index):
@@ -47,14 +47,14 @@ def test_pub(dds, index):
         exit(0)
 
     # first, run publisher
-    publisher = subprocess.run(os.path.join(".", exe_dir), stdout=outputfile)
+    publisher = subprocess.Popen(os.path.join(".", exe_dir), stdout=outputfile)
 
     # wait for publisher
-    time.sleep(20)
+    time.sleep(30)
 
     # kill subprocess
     if subprocess.Popen.poll(publisher) == None:
-        publisher.terminate()
+        subprocess.Popen.terminate(publisher)
     outputfile.close()
 
 def main():

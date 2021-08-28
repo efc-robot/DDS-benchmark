@@ -65,9 +65,9 @@ private:
             if (info.current_count_change == 1)
             {
                 matched_ = info.total_count;
-                std::cout << "Publisher matched at time: " 
-                    << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-                    << std::endl;
+                // std::cout << "Publisher matched at time: " 
+                //     << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+                //     << std::endl;
             }
             else if (info.current_count_change == -1)
             {
@@ -154,9 +154,9 @@ public:
         {
             return false;
         }
-        std::cout << "Init Publisher at time: " 
-            << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-            << std::endl; 
+        // std::cout << "Init Publisher at time: " 
+        //     << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+        //     << std::endl; 
         return true;
     }
 
@@ -182,10 +182,10 @@ public:
             if (publish())
             {
                 samples_sent++;
-                std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
-                          << " SENT at time: " 
-                          << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-                          << std::endl;
+                // std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
+                //           << " SENT at time: " 
+                //           << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+                //           << std::endl;
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
@@ -196,7 +196,7 @@ int main(
         int argc,
         char** argv)
 {
-    std::cout << "Starting publisher." << std::endl;
+    //std::cout << "Starting publisher." << std::endl;
     int samples = 10;
 
     Log::SetVerbosity(Log::Kind::Info);

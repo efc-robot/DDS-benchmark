@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/shenzy/Documents/cmake-3.12.4-Linux-x86_64/bin/cmake
+CMAKE_COMMAND = /home/xuzl/Downloads/cmake-3.12.4-Linux-x86_64/bin/cmake
 
 # The command to remove a file.
-RM = /home/shenzy/Documents/cmake-3.12.4-Linux-x86_64/bin/cmake -E remove -f
+RM = /home/xuzl/Downloads/cmake-3.12.4-Linux-x86_64/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/shenzy/Documents/DDSHelloWorld_ws
+CMAKE_SOURCE_DIR = /home/xuzl/Documents/DDS-benchmark/fastdds/workspace
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/shenzy/Documents/DDSHelloWorld_ws/build
+CMAKE_BINARY_DIR = /home/xuzl/Documents/DDS-benchmark/fastdds/workspace/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/shenzy/Documents/DDSHelloWorld_ws/build
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/shenzy/Documents/cmake-3.12.4-Linux-x86_64/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/xuzl/Downloads/cmake-3.12.4-Linux-x86_64/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/home/shenzy/Documents/cmake-3.12.4-Linux-x86_64/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/xuzl/Downloads/cmake-3.12.4-Linux-x86_64/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shenzy/Documents/DDSHelloWorld_ws/build/CMakeFiles /home/shenzy/Documents/DDSHelloWorld_ws/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xuzl/Documents/DDS-benchmark/fastdds/workspace/build/CMakeFiles /home/xuzl/Documents/DDS-benchmark/fastdds/workspace/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shenzy/Documents/DDSHelloWorld_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xuzl/Documents/DDS-benchmark/fastdds/workspace/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

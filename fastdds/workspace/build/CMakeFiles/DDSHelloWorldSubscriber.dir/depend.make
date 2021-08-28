@@ -117,6 +117,8 @@ CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/loca
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/domain/qos/DomainParticipantFactoryQos.hpp
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/domain/qos/DomainParticipantQos.hpp
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/log/Log.hpp
+CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/log/OStreamConsumer.hpp
+CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/log/StdoutConsumer.hpp
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/subscriber/DataReader.hpp
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/subscriber/DataReaderListener.hpp
 CMakeFiles/DDSHelloWorldSubscriber.dir/src/HelloWorldSubscriber.cpp.o: /usr/local/include/fastdds/dds/subscriber/InstanceState.hpp

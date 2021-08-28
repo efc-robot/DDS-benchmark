@@ -1,4 +1,4 @@
-# Install script for directory: /home/shenzy/Documents/DDSHelloWorld_ws
+# Install script for directory: /home/xuzl/Documents/DDS-benchmark/fastdds/workspace
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/shenzy/Documents/DDSHelloWorld_ws/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xuzl/Documents/DDS-benchmark/fastdds/workspace/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
