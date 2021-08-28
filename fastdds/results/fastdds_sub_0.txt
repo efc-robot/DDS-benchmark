@@ -1,0 +1,13 @@
+Starting subscriber.
+Init Subscriber at time: 1630069557447
+Subscriber matched at time: 1630069569966
+Message: HelloWorld with index: 1 RECEIVED at time: 1630069570626
+Message: HelloWorld with index: 2 RECEIVED at time: 1630069571628
+Message: HelloWorld with index: 3 RECEIVED at time: 1630069572633
+Message: HelloWorld with index: 4 RECEIVED at time: 1630069573635
+Message: HelloWorld with index: 5 RECEIVED at time: 1630069574637
+Message: HelloWorld with index: 6 RECEIVED at time: 1630069575641
+Message: HelloWorld with index: 7 RECEIVED at time: 1630069576642
+Message: HelloWorld with index: 8 RECEIVED at time: 1630069577646
+Message: HelloWorld with index: 9 RECEIVED at time: 1630069578649
+Message: HelloWorld with index: 10 RECEIVED at time: 1630069579655
