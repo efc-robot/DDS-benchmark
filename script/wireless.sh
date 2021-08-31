@@ -1,4 +1,4 @@
-output=$1/results/wireless_$2.txt
+output=$1/results/wireless/wireless_$2.txt
 sudo ifconfig wlan0 down
 #echo "waiting for publisher..."
 #read -e -s

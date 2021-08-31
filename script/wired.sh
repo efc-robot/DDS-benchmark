@@ -1,4 +1,4 @@
-output=$1/results/wired_$2.txt
+output=$1/results/wired/wired_$2.txt
 sudo ifconfig eth0 down
 #echo "waiting for publisher..."
 #read -e -s

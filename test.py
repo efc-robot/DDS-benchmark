@@ -17,9 +17,9 @@ args = parser.parse_args()
 
 
 def test_sub(dds, net, index):
-    exe_dir = os.path.join(dds, "workspace/build/DDSHelloWorldSubscriber")
-    output_file = "{}_sub_{}_{}.txt".format(dds, net, index)
-    output_dir = os.path.join(dds, "results")
+    exe_dir = os.path.join(dds, "workspace/build/subscriber")
+    output_file = "sub_{:04d}.txt".format(index)
+    output_dir = os.path.join(dds, "results", net)
     outputfile = open(os.path.join(output_dir, output_file), 'w')
     if outputfile == None:
         print("open output file error!")
@@ -30,20 +30,22 @@ def test_sub(dds, net, index):
     time.sleep(5)
     
     # second, run network script
-    network = subprocess.Popen(['/bin/bash', "./script/{}.sh".format(net), "fastdds", "{:d}".format(index)], stdout=subprocess.PIPE)
+    network = subprocess.Popen(['/bin/bash', "./script/{}.sh".format(net), dds, "{:04d}".format(index)], stdout=subprocess.PIPE)
     network.wait()
-    # wait for publisher
-    time.sleep(20)
 
-    # kill subprocess
-    if subprocess.Popen.poll(subscriber) == None:
-        subprocess.Popen.terminate(subscriber)
-    outputfile.close()
+    # wait for subscriber
+    subscriber.wait()
+    # time.sleep(20)
+
+    # # kill subprocess
+    # if subprocess.Popen.poll(subscriber) == None:
+    #     subprocess.Popen.terminate(subscriber)
+    # outputfile.close()
 
 def test_pub(dds, net, index):
-    exe_dir = os.path.join(dds, "workspace/build/DDSHelloWorldPublisher")
-    output_file = "{}_pub_{}_{}.txt".format(dds, net, index)
-    output_dir = os.path.join(dds, "results")
+    exe_dir = os.path.join(dds, "workspace/build/publisher")
+    output_file = "pub_{:04d}.txt".format(index)
+    output_dir = os.path.join(dds, "results", net)
     outputfile = open(os.path.join(output_dir, output_file), 'w')
     if outputfile == None:
         print("open output file error!")
@@ -53,12 +55,13 @@ def test_pub(dds, net, index):
     publisher = subprocess.Popen(os.path.join(".", exe_dir), stdout=outputfile)
 
     # wait for publisher
-    time.sleep(30)
+    publisher.wait()
+    # time.sleep(30)
 
-    # kill subprocess
-    if subprocess.Popen.poll(publisher) == None:
-        subprocess.Popen.terminate(publisher)
-    outputfile.close()
+    # # kill subprocess
+    # if subprocess.Popen.poll(publisher) == None:
+    #     subprocess.Popen.terminate(publisher)
+    # outputfile.close()
 
 def main():
     for dds in args.dds:

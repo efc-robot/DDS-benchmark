@@ -1,4 +1,4 @@
-output=$1/results/adhoc_$2.txt
+output=$1/results/adhoc/adhoc_$2.txt
 sudo ifconfig wlan0 down
 #echo "waiting for publisher..."
 #read -e -s
