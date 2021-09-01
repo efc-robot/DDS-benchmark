@@ -24,9 +24,12 @@ def test_sub(dds, net, index):
     if outputfile == None:
         print("open output file error!")
         exit(0)
-
+    if dds == "fastdds":
+        cmd = os.path.join(".", exe_dir)
+    if dds == "opendds":
+        cmd = [os.path.join(".", exe_dir), '-DCPSConfigFile', 'rtps.ini', '-DCPSDebugLevel', '8']
     # first, run subscriber
-    subscriber = subprocess.Popen(os.path.join(".", exe_dir), stdout=outputfile)
+    subscriber = subprocess.Popen(cmd, stdout=outputfile)
     time.sleep(5)
     
     # second, run network script
@@ -51,8 +54,13 @@ def test_pub(dds, net, index):
         print("open output file error!")
         exit(0)
 
+    if dds == "fastdds":
+        cmd = os.path.join(".", exe_dir)
+    if dds == "opendds":
+        cmd = [os.path.join(".", exe_dir), '-DCPSConfigFile', 'rtps.ini', '-DCPSDebugLevel', '4']
+
     # first, run publisher
-    publisher = subprocess.Popen(os.path.join(".", exe_dir), stdout=outputfile)
+    publisher = subprocess.Popen(cmd, stdout=outputfile)
 
     # wait for publisher
     publisher.wait()
