@@ -4,10 +4,9 @@ import subprocess
 import time
 
 parser = argparse.ArgumentParser(description="DDS benchmark")
-parser.add_argument('--num', type=int, default=1, help="number of experiments, default:100")
 parser.add_argument('--index', type=int, default=0, help="index of experiments, default:0")
-parser.add_argument('--dds', required=True, choices=['fastdds', 'opensplice', 'connext', 'opendds'], nargs='+', 
-    help="choose one or more DDS for experiments(choices:fastdds, opensplice, connext, opendds)")
+parser.add_argument('--dds', required=True, choices=['fastdds', 'opensplice', 'opendds'], nargs='+', 
+    help="choose one or more DDS for experiments(choices:fastdds, opensplice, opendds)")
 parser.add_argument('--net', required=True, choices=['adhoc', 'wired', 'wireless'], help="choose the way of networking")
 group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('--sub', action='store_true', help="serve as a subscriber")
@@ -28,6 +27,8 @@ def test_sub(dds, net, index):
         cmd = os.path.join(".", exe_dir)
     if dds == "opendds":
         cmd = [os.path.join(".", exe_dir), '-DCPSConfigFile', 'rtps.ini', '-DCPSDebugLevel', '8']
+    if dds == "opensplice":
+        cmd = os.path.join(".", exe_dir)
     # first, run subscriber
     subscriber = subprocess.Popen(cmd, stdout=outputfile)
     time.sleep(5)
@@ -40,6 +41,8 @@ def test_sub(dds, net, index):
     subscriber.wait()
     # time.sleep(20)
 
+    if dds == "opensplice":
+        subprocess.run(['cp', 'workspace/build/ddsi.log', outputfile])
     # # kill subprocess
     # if subprocess.Popen.poll(subscriber) == None:
     #     subprocess.Popen.terminate(subscriber)
@@ -58,12 +61,16 @@ def test_pub(dds, net, index):
         cmd = os.path.join(".", exe_dir)
     if dds == "opendds":
         cmd = [os.path.join(".", exe_dir), '-DCPSConfigFile', 'rtps.ini', '-DCPSDebugLevel', '4']
+    if dds == "opensplice":
+        cmd = os.path.join(".", exe_dir)
 
     # first, run publisher
     publisher = subprocess.Popen(cmd, stdout=outputfile)
 
     # wait for publisher
     publisher.wait()
+    if dds == "opensplice":
+        subprocess.run(['cp', 'workspace/build/ddsi.log', outputfile])
     # time.sleep(30)
 
     # # kill subprocess
