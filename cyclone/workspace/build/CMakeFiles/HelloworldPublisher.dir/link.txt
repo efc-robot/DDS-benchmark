@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/HelloworldPublisher.dir/publisher.c.o CMakeFiles/HelloworldPublisher.dir/HelloWorldData.c.o  -o HelloworldPublisher  -Wl,-rpath,/opt/ros/foxy/lib/aarch64-linux-gnu /opt/ros/foxy/lib/aarch64-linux-gnu/libddsc.so.0.7.0 

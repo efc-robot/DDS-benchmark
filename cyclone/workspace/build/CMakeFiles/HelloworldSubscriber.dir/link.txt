@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/HelloworldSubscriber.dir/subscriber.c.o CMakeFiles/HelloworldSubscriber.dir/HelloWorldData.c.o  -o HelloworldSubscriber  -Wl,-rpath,/opt/ros/foxy/lib/aarch64-linux-gnu /opt/ros/foxy/lib/aarch64-linux-gnu/libddsc.so.0.7.0 

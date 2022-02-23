@@ -64,9 +64,9 @@ private:
         {
             if (info.current_count_change == 1)
             {
-                // std::cout << "Subscriber matched at time: " 
-                //     << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-                //     << std::endl;
+            //    std::cout << "Subscriber matched at time: " 
+            //        << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+            //        << std::endl;
             }
             else if (info.current_count_change == -1)
             {
@@ -88,10 +88,10 @@ private:
                 if (info.valid_data)
                 {
                     samples_++;
-                    // std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
-                    //             << " RECEIVED at time: " 
-                    //             << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-                    //             << std::endl;
+                    //std::cout << "Message: " << hello_.message() << " with index: " << hello_.index()
+                    //            << " RECEIVED at time: " 
+                    //            << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+                    //            << std::endl;
                 }
             }
         }
@@ -168,9 +168,9 @@ public:
         {
             return false;
         }
-        // std::cout << "Init Subscriber at time: " 
-        //     << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
-        //     << std::endl; 
+        //std::cout << "Init Subscriber at time: " 
+        //    << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count()
+        //   << std::endl; 
         return true;
     }
 
